@@ -29,7 +29,7 @@ class StateModel:
         self.__num_states = rows*cols*4
         self.__num_readings = rows*cols+1
 
-    def state_to_pose(self, s: int) -> (int, int, int):
+    def state_to_pose(self, s: int) -> tuple[int, int, int]:
         x = s // (self.__cols * self.__head)
         y = (s - x * self.__cols * self.__head) // self.__head
         h = s % self.__head
@@ -39,13 +39,13 @@ class StateModel:
     def pose_to_state(self, x: int, y: int, h: int) -> int:
         return x * self.__cols * self.__head + y * self.__head + h
 
-    def state_to_position(self, s: int) -> (int, int):
+    def state_to_position(self, s: int) -> tuple[int, int]:
         x = s // (self.__cols * self.__head)
         y = (s - x * self.__cols * self.__head) // self.__head
 
         return x, y
 
-    def reading_to_position(self, r: int) -> (int, int):
+    def reading_to_position(self, r: int) -> tuple[int, int]:
         x = r // self.__cols
         y = r % self.__cols
 
@@ -62,7 +62,7 @@ class StateModel:
     def reading_to_ref_state(self, r: int) -> int:
         return r * self.__head
 
-    def get_grid_dimensions(self) -> (int, int, int):
+    def get_grid_dimensions(self) -> tuple[int, int, int]:
         return self.__rows, self.__cols, self.__head
 
     def get_num_of_states(self) -> int:
