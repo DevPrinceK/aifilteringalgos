@@ -43,7 +43,7 @@ class FilterSmoother:
         """Normalize a probability vector; fall back safely if it is degenerate."""
         s = float(np.sum(vec))
         if s <= 0.0 or not np.isfinite(s):
-            # Should not happen with the provided models, but guard against numerical issues.
+            # in case of degenerate vector (e.g., all zeros or NaNs).
             return np.ones_like(vec, dtype=float) / float(vec.size)
         return vec / s
         
