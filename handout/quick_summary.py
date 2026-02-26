@@ -8,8 +8,10 @@ AUTHORS:
     1. Prince Samuel Kyeremanteng
     2. Cecilia Quinn
 
-This code was optimized by an LLM (ChatGPT-4) and we used it to quickly summarize the results of the evaluations, which was very useful in our discussions and analysis. 
-The LLM helped us to quickly extract key statistics from the error data, which allowed us to focus on interpreting the results rather than spending time on manual calculations.
+This code was optimized by an LLM (ChatGPT-4) and we used it to quickly summarize the results of the evaluations, 
+which was very useful in our discussions and analysis. 
+The LLM helped us to quickly extract key statistics from the error data, 
+which allowed us to focus on interpreting the results rather than spending time on manual calculations.
 """
 
 from __future__ import annotations

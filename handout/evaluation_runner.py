@@ -38,14 +38,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# Make the handout folder importable regardless of current working directory.
+# So we can import the handout folder regardless of the current working directory. 
+# This is needed to import the models and FilterSmoother for the simulations and evaluations.
 _THIS_DIR = Path(__file__).resolve().parent
 if str(_THIS_DIR) not in os.sys.path:
     os.sys.path.insert(0, str(_THIS_DIR))
 
 # these are imported here to avoid circular imports with Filters.py
 # which imports the same models for its own use. 
-# The models are not used directly in this file, but they are needed for the simulate_move_sense() function, which creates the simulations that we evaluate.
+# The models are not used directly in this file, 
+# but they are needed for the simulate_move_sense() function, which creates the simulations that we evaluate.
 from models import StateModel, TransitionModel, ObservationModel_NUF, ObservationModel_UF, RobotSim
 from Filters import FilterSmoother
 
